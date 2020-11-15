@@ -3,29 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E85E73D2560AC35005ED64B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E85E73C2560AC35005ED64B /* GoogleService-Info.plist */; };
+		2E85E7472560D6A9005ED64B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85E7462560D6A9005ED64B /* TableViewController.swift */; };
+		2E85E7492560D851005ED64B /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85E7482560D851005ED64B /* K.swift */; };
+		2E85E74C2560DB57005ED64B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85E74B2560DB57005ED64B /* Event.swift */; };
 		2E981970255CC57F00F8F436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98196F255CC57F00F8F436 /* AppDelegate.swift */; };
 		2E981972255CC57F00F8F436 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E981971255CC57F00F8F436 /* SceneDelegate.swift */; };
-		2E981974255CC57F00F8F436 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E981973255CC57F00F8F436 /* ViewController.swift */; };
 		2E981977255CC57F00F8F436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E981975255CC57F00F8F436 /* Main.storyboard */; };
 		2E98197A255CC57F00F8F436 /* Threat_Detector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E981978255CC57F00F8F436 /* Threat_Detector.xcdatamodeld */; };
 		2E98197C255CC58500F8F436 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E98197B255CC58500F8F436 /* Assets.xcassets */; };
 		2E98197F255CC58500F8F436 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E98197D255CC58500F8F436 /* LaunchScreen.storyboard */; };
+		FD74D9FD477C11B1F34A9374 /* Pods_Threat_Detector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45CCDC8E2F6615B7AFC1F20 /* Pods_Threat_Detector.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E85E73C2560AC35005ED64B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2E85E7462560D6A9005ED64B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		2E85E7482560D851005ED64B /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		2E85E74B2560DB57005ED64B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		2E98196C255CC57F00F8F436 /* Threat Detector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Threat Detector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E98196F255CC57F00F8F436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E981971255CC57F00F8F436 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2E981973255CC57F00F8F436 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2E981976255CC57F00F8F436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E981979255CC57F00F8F436 /* Threat_Detector.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Threat_Detector.xcdatamodel; sourceTree = "<group>"; };
 		2E98197B255CC58500F8F436 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E98197E255CC58500F8F436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E981980255CC58600F8F436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A45CCDC8E2F6615B7AFC1F20 /* Pods_Threat_Detector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Threat_Detector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6FE202D25342B483BFF7041 /* Pods-Threat Detector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Threat Detector.release.xcconfig"; path = "Target Support Files/Pods-Threat Detector/Pods-Threat Detector.release.xcconfig"; sourceTree = "<group>"; };
+		D7FBF7B6A503A38EAE8C5732 /* Pods-Threat Detector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Threat Detector.debug.xcconfig"; path = "Target Support Files/Pods-Threat Detector/Pods-Threat Detector.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +43,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD74D9FD477C11B1F34A9374 /* Pods_Threat_Detector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E85E73A2560AA72005ED64B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2E85E7462560D6A9005ED64B /* TableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2E85E73B2560AA8C005ED64B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2E981975255CC57F00F8F436 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2E85E74A2560D96B005ED64B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2E85E7482560D851005ED64B /* K.swift */,
+				2E85E74B2560DB57005ED64B /* Event.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2E981963255CC57F00F8F436 = {
 			isa = PBXGroup;
 			children = (
 				2E98196E255CC57F00F8F436 /* Threat Detector */,
 				2E98196D255CC57F00F8F436 /* Products */,
+				FD5A908FCB961F06BCBCEE75 /* Pods */,
+				9E2E94E7A7F970BD4ABD4201 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,14 +98,33 @@
 			children = (
 				2E98196F255CC57F00F8F436 /* AppDelegate.swift */,
 				2E981971255CC57F00F8F436 /* SceneDelegate.swift */,
-				2E981973255CC57F00F8F436 /* ViewController.swift */,
-				2E981975255CC57F00F8F436 /* Main.storyboard */,
+				2E85E74A2560D96B005ED64B /* Model */,
+				2E85E73A2560AA72005ED64B /* Controllers */,
+				2E85E73B2560AA8C005ED64B /* Views */,
 				2E98197B255CC58500F8F436 /* Assets.xcassets */,
 				2E98197D255CC58500F8F436 /* LaunchScreen.storyboard */,
 				2E981980255CC58600F8F436 /* Info.plist */,
 				2E981978255CC57F00F8F436 /* Threat_Detector.xcdatamodeld */,
+				2E85E73C2560AC35005ED64B /* GoogleService-Info.plist */,
 			);
 			path = "Threat Detector";
+			sourceTree = "<group>";
+		};
+		9E2E94E7A7F970BD4ABD4201 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A45CCDC8E2F6615B7AFC1F20 /* Pods_Threat_Detector.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD5A908FCB961F06BCBCEE75 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7FBF7B6A503A38EAE8C5732 /* Pods-Threat Detector.debug.xcconfig */,
+				D6FE202D25342B483BFF7041 /* Pods-Threat Detector.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +134,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E981983255CC58600F8F436 /* Build configuration list for PBXNativeTarget "Threat Detector" */;
 			buildPhases = (
+				CF7D165D662BA1EF0D6CEEF9 /* [CP] Check Pods Manifest.lock */,
 				2E981968255CC57F00F8F436 /* Sources */,
 				2E981969255CC57F00F8F436 /* Frameworks */,
 				2E98196A255CC57F00F8F436 /* Resources */,
@@ -129,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E98197F255CC58500F8F436 /* LaunchScreen.storyboard in Resources */,
+				2E85E73D2560AC35005ED64B /* GoogleService-Info.plist in Resources */,
 				2E98197C255CC58500F8F436 /* Assets.xcassets in Resources */,
 				2E981977255CC57F00F8F436 /* Main.storyboard in Resources */,
 			);
@@ -136,14 +195,41 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CF7D165D662BA1EF0D6CEEF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Threat Detector-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2E981968255CC57F00F8F436 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E981974255CC57F00F8F436 /* ViewController.swift in Sources */,
 				2E98197A255CC57F00F8F436 /* Threat_Detector.xcdatamodeld in Sources */,
 				2E981970255CC57F00F8F436 /* AppDelegate.swift in Sources */,
+				2E85E7492560D851005ED64B /* K.swift in Sources */,
+				2E85E7472560D6A9005ED64B /* TableViewController.swift in Sources */,
+				2E85E74C2560DB57005ED64B /* Event.swift in Sources */,
 				2E981972255CC57F00F8F436 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +372,7 @@
 		};
 		2E981984255CC58600F8F436 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7FBF7B6A503A38EAE8C5732 /* Pods-Threat Detector.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +391,7 @@
 		};
 		2E981985255CC58600F8F436 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6FE202D25342B483BFF7041 /* Pods-Threat Detector.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
