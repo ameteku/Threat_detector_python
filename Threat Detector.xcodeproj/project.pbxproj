@@ -138,6 +138,7 @@
 				2E981968255CC57F00F8F436 /* Sources */,
 				2E981969255CC57F00F8F436 /* Frameworks */,
 				2E98196A255CC57F00F8F436 /* Resources */,
+				B6D243B475C57F8701AF6599 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,6 +197,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B6D243B475C57F8701AF6599 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Threat Detector/Pods-Threat Detector-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Threat Detector/Pods-Threat Detector-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Threat Detector/Pods-Threat Detector-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CF7D165D662BA1EF0D6CEEF9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

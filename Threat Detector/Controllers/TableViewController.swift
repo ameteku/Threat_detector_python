@@ -10,27 +10,17 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
+    var ref: DatabaseReference!
+
+    ref = Database.database().reference()
+    
+    var events: [Event] = [Event(message: "Dog entered", time: "8:59")]
     
     @IBOutlet var myTableView: UITableView!
     
     @IBAction func refreshPressed(_ sender: UIButton) {
         
-//        db.collection("found_objects").getDocuments() { (querySnapshot, err) in
-//            if let err = err {
-//                print("Error getting documents: \(err)")
-//            } else {
-//                for document in querySnapshot!.documents {
-//                    print("\(document.documentID) => \(document.data())")
-//                }
-//            }
-//        }
     }
-    
-    
-    var events: [Event] = [Event(message: "Dog entered", time: "8:59")]
-    
-    
-    
     
 
     override func viewDidLoad() {
@@ -44,6 +34,23 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func loadMessages(){
+        //might still have to go 1 child down below
+        //order by date
+        //might have to iterate through the database snapshot
+        ref.child(K.structureName).child(K.collectionName).observeSingleEvent(of: .value, with: { (snapshot) in
+          // Get user value
+          let value = snapshot.value as? NSDictionary
+            let messageF = value?[K.messageField] as? String ?? ""
+            let timeF = value?[K.timeField] as? String ?? ""
+          let event = Event(message: message, time: timeF)
+
+          // ...
+          }) { (error) in
+            print(error.localizedDescription)
+        }
     }
 
     // MARK: - Table view data source
