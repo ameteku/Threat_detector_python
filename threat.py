@@ -6,12 +6,18 @@ import os
 from twilio.rest import Client
 import pyrebase # for connecting to firebase
 import datetime
+import firebase_admin
+from firebase_admin import  storage 
+from firebase_admin import credentials
+
+
 
 # if an object is found process it
 def pushinfo(obj,initobjs, image):
     if obj not in initobjs:
+        #urltoimg = "https://firebasestorage.googleapis.com/v0/b/hackohio-199a4.appspot.com/o/images/"
+
         #data to save
-        
         date = str(datetime.datetime.now())
         filename = obj +(((date.replace(' ','_')).replace(':','_')).replace('.','_')).strip('-')+".png"
         print(filename)
@@ -23,15 +29,20 @@ def pushinfo(obj,initobjs, image):
         log = open("messagelog.txt", 'a')
         try:
             cv2.imwrite(obj+".png", image)
-            secnumber= '+1XXXXXXXXXXX'
-            number = '+1XXXXXXXXXXXX'
+            store.child("images/"+ filename).put(obj+".png")
+            blob = bucket.blob("images/"+ filename)
+
+            urltoimg= str(blob.generate_signed_url(datetime.timedelta(seconds=2000), method='GET'))
+            secnumber= '+17404058840'
+            number = '+18577624985'
             #send message to client
             message = client.messages \
                             .create(
-                                body="We saw a " + obj + "at: "+ date + "\n see image at", 
-                                #storage.child("images/"+ filename).get_url,
-                                from_='+1XXXXXXXXXXXX',
-                                to=secnumber)
+                                body="We saw a " + obj + "at: "+ date + "\n see image at "+
+                                urltoimg,
+                                #str(storage.child("images/"+ filename).get_url(custom_token)),
+                                from_='+12058517392',
+                                to=number)
                         
             
             log.write("\n----message sent to " +number +"at" + date+ '\n')
@@ -45,18 +56,18 @@ def pushinfo(obj,initobjs, image):
             log.write("uploaded to db")
         except Exception as e:
             log.write(e + " was not able to upload to db\n")
-        log.close()
-        storage.child("images/"+ filename).put(obj+".png")
+        log.close() 
+        
         initobj.append(obj)
 
 
 #firebase config
 config = {
-  "apiKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-  "authDomain": "XXXXXXXXXXX.firebaseapp.com",
-  "databaseURL": "https://XXXXXXXX.firebaseio.com",
-  "storageBucket": "XXXXXXXXXXX.appspot.com",
-  "serviceAccount": "XXXXXXXXXXXXXXXXXX.json"
+  "apiKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "authDomain": "XXXXXXXXXXXXXXXXXXXXXXXXXXXX.firebaseapp.com",
+  "databaseURL": "https://hackohio-199a4.firebaseio.com",
+  "storageBucket": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.appspot.com",
+  "serviceAccount": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.json"
 }
 
 #configuration tings
@@ -67,12 +78,12 @@ auth =firebase.auth()
 
 #connect to database and storage
 db = firebase.database()
-storage = firebase.storage()
+store = firebase.storage()
 
 
 #twilio too
-account_sid ='XXXXXXXXXXXXXXXXXXXXXX'
-auth_token = 'XXXXXXXXXXXXXXXXXXXXXX'
+account_sid ='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+auth_token = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 client = Client(account_sid, auth_token)
 
 #f= open("foundorNot.txt", 'r')
@@ -80,6 +91,19 @@ client = Client(account_sid, auth_token)
 ids= {"person", "dog","gun", "knife","bottle", "cell phone"}
 found= []
 initobj = []
+
+#uid = "2"
+#custom_token = auth.create_custom_token(uid)
+
+
+cred = credentials.Certificate("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.json")
+
+# Initialize the app with a service account, granting admin privileges
+app = firebase_admin.initialize_app(cred, {
+    'storageBucket': 'XXXXXXXXXXXXXXXXXX.com',
+}, name='storage')
+
+bucket = storage.bucket(app=app)
 
 
 
@@ -203,6 +227,10 @@ cv2.destroyAllWindows()
 #cv2.imwrite(filename + "_yolo3."+ ext, image)
 #cv2.imshow("finished", image)
 cv2.waitKey(0)
+
+
+
+
 
 
 
