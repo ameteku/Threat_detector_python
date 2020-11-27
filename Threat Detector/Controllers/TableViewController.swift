@@ -4,28 +4,30 @@
 //
 //  Created by Ebo Sompa Dennis on 11/14/20.
 //  Copyright © 2020 Ebo Sompa Dennis. All rights reserved.
-//
+
+
+import Firebase
 
 import UIKit
 
 class TableViewController: UITableViewController {
     
-    var ref: DatabaseReference!
-
-    ref = Database.database().reference()
+    var ref: DatabaseReference! = Database.database().reference()
     
-    var events: [Event] = [Event(message: "Dog entered", time: "8:59")]
+    var events: [Event] = []
     
     @IBOutlet var myTableView: UITableView!
     
     @IBAction func refreshPressed(_ sender: UIButton) {
-        
+        events.removeAll()
+        loadMessages()
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        events.append(Event(message: "Gun seen", time: "10:00"))
+        loadMessages()
+        print(events)
         
         myTableView.dataSource = self
 
@@ -36,21 +38,62 @@ class TableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    /*
+    
+    func downloadImage(from url: URL) {
+        print("Download Started")
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() { [weak self] in
+                self?.imageView.image = UIImage(data: data)
+            }
+        }
+    }
+    */
     func loadMessages(){
-        //might still have to go 1 child down below
-        //order by date
-        //might have to iterate through the database snapshot
-        ref.child(K.structureName).child(K.collectionName).observeSingleEvent(of: .value, with: { (snapshot) in
+        
+        ref.child(K.FStore.structureName).child(K.FStore.collectionName).observeSingleEvent(of: .value, with: { (snapshot) in
           // Get user value
-          let value = snapshot.value as? NSDictionary
-            let messageF = value?[K.messageField] as? String ?? ""
-            let timeF = value?[K.timeField] as? String ?? ""
-          let event = Event(message: message, time: timeF)
+           
+            let data = snapshot.value as! NSDictionary
+//            data.sorted { (<#(key: Any, value: Any)#>, <#(key: Any, value: Any)#>) -> Bool in
+//                <#code#>
+//            }
+            print(data)
+            for (key,_) in data {
+                let nne = data.value(forKey: key as! String) as! NSDictionary
+                
+                
+                var messageF:String = nne.value(forKey: K.FStore.messageField) as? String ?? "None"
+                messageF = messageF + " spotted"
+                var timeF:String = nne.value(forKey: K.FStore.timeField) as? String ?? "Time"
+                timeF = "at time " + timeF
+                //var linkImage:String = nne.value(forKey:"link") as? String ?? "None"
+                //let url = URL(string: linkImage)!
+                let event = Event(message: messageF, time: timeF)
+                
+                
+                //self.downloadImage(from: url)
+                
+                
+                print(event)
+                self.events.append(event)
+                
+
+            }
+            self.myTableView.reloadData()
+
 
           // ...
           }) { (error) in
             print(error.localizedDescription)
         }
+        
     }
 
     // MARK: - Table view data source
@@ -85,7 +128,29 @@ class TableViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
+     
     */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        /*if let filePath = Bundle.main.path(forResource: "imageName", ofType: "jpg"), let image = UIImage(contentsOfFile: filePath) {
+            imageView.contentMode = .scaleAspectFit
+            imageView.image = image
+        }*/
+        
+        //let mylink = events[indexPath.row].link
+        
+        /*
+        if let email = emailTextfield.text, let password = passwordTextfield.text {
+                    Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                        if let e = error{
+                            print(e.localizedDescription)
+                        } else {
+                            self.performSegue(withIdentifier: K.loginSegue, sender: self)
+                        }
+                    }
+                }
+    */
+    }
 
     /*
     // Override to support editing the table view.

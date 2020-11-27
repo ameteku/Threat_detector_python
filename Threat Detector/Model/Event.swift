@@ -9,4 +9,5 @@
 struct Event {
     let message: String
     let time: String
+    //let link: String
 }

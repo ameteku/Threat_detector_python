@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2E85E73D2560AC35005ED64B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E85E73C2560AC35005ED64B /* GoogleService-Info.plist */; };
 		2E85E7472560D6A9005ED64B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85E7462560D6A9005ED64B /* TableViewController.swift */; };
-		2E85E7492560D851005ED64B /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85E7482560D851005ED64B /* K.swift */; };
 		2E85E74C2560DB57005ED64B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85E74B2560DB57005ED64B /* Event.swift */; };
 		2E981970255CC57F00F8F436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98196F255CC57F00F8F436 /* AppDelegate.swift */; };
 		2E981972255CC57F00F8F436 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E981971255CC57F00F8F436 /* SceneDelegate.swift */; };
@@ -17,13 +16,14 @@
 		2E98197A255CC57F00F8F436 /* Threat_Detector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E981978255CC57F00F8F436 /* Threat_Detector.xcdatamodeld */; };
 		2E98197C255CC58500F8F436 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E98197B255CC58500F8F436 /* Assets.xcassets */; };
 		2E98197F255CC58500F8F436 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E98197D255CC58500F8F436 /* LaunchScreen.storyboard */; };
+		5162E2F125618C4900D56E2F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5162E2F025618C4900D56E2F /* Constants.swift */; };
+		5177F7DA2561A7D30053AE38 /* ImageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5177F7D92561A7D30053AE38 /* ImageViewViewController.swift */; };
 		FD74D9FD477C11B1F34A9374 /* Pods_Threat_Detector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45CCDC8E2F6615B7AFC1F20 /* Pods_Threat_Detector.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2E85E73C2560AC35005ED64B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2E85E7462560D6A9005ED64B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		2E85E7482560D851005ED64B /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		2E85E74B2560DB57005ED64B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		2E98196C255CC57F00F8F436 /* Threat Detector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Threat Detector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E98196F255CC57F00F8F436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +33,8 @@
 		2E98197B255CC58500F8F436 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E98197E255CC58500F8F436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E981980255CC58600F8F436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5162E2F025618C4900D56E2F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5177F7D92561A7D30053AE38 /* ImageViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewViewController.swift; sourceTree = "<group>"; };
 		A45CCDC8E2F6615B7AFC1F20 /* Pods_Threat_Detector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Threat_Detector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6FE202D25342B483BFF7041 /* Pods-Threat Detector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Threat Detector.release.xcconfig"; path = "Target Support Files/Pods-Threat Detector/Pods-Threat Detector.release.xcconfig"; sourceTree = "<group>"; };
 		D7FBF7B6A503A38EAE8C5732 /* Pods-Threat Detector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Threat Detector.debug.xcconfig"; path = "Target Support Files/Pods-Threat Detector/Pods-Threat Detector.debug.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				2E85E7462560D6A9005ED64B /* TableViewController.swift */,
+				5177F7D92561A7D30053AE38 /* ImageViewViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -69,8 +72,8 @@
 		2E85E74A2560D96B005ED64B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2E85E7482560D851005ED64B /* K.swift */,
 				2E85E74B2560DB57005ED64B /* Event.swift */,
+				5162E2F025618C4900D56E2F /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,7 +159,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Ebo Sompa Dennis";
 				TargetAttributes = {
 					2E98196B255CC57F00F8F436 = {
@@ -245,10 +248,11 @@
 			files = (
 				2E98197A255CC57F00F8F436 /* Threat_Detector.xcdatamodeld in Sources */,
 				2E981970255CC57F00F8F436 /* AppDelegate.swift in Sources */,
-				2E85E7492560D851005ED64B /* K.swift in Sources */,
 				2E85E7472560D6A9005ED64B /* TableViewController.swift in Sources */,
 				2E85E74C2560DB57005ED64B /* Event.swift in Sources */,
 				2E981972255CC57F00F8F436 /* SceneDelegate.swift in Sources */,
+				5177F7DA2561A7D30053AE38 /* ImageViewViewController.swift in Sources */,
+				5162E2F125618C4900D56E2F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +304,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -360,6 +365,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
